@@ -5,7 +5,7 @@
 Backend repo for team-180-group-a
 
 
-###- SETUP
+### - SETUP
 
 Step 1: Click on Fork at the top right corner
 
