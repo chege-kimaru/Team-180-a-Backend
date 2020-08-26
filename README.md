@@ -24,11 +24,11 @@ Step 6: Check out to the task branch | <code>git checkout -b <NAME_OF_THE_TASK><
 
 ### - Running the project locally
 
-Step 1: npm install
+Step 1: <code>npm install</code>
 
 Step 2: Copy env.example to .env
 
-Step 3: npm run start
+Step 3: <code>npm run start</code>
 
 Step 4: Go to http://localhost:3000
 
@@ -39,13 +39,13 @@ Run <code>git branch</code> It should show that you are on your current branch
 
 After implementing your task
 
-Step 1: Run: git add .
+Step 1: Run: <code>git add .</code>
 
-Step 2: Run: git commit -m "< COMMIT MESSAGE >"
+Step 2: Run: <code>git commit -m "< COMMIT MESSAGE >"</code>
 
-Step 3: git pull upstream develop
+Step 3: <code>git pull upstream develop</code>
 
-Step 4: git push origin < BRANCH_NAME >
+Step 4: <code>git push origin < BRANCH_NAME ></code>
 
 Go to the repository https://github.com/BuildForSDGCohort2/Team-180-a-Backend
 
