@@ -17,27 +17,10 @@ app.use(cors());
 
 app.use(registerRoutes);
 
-// connect to our db
-const { MONGOLAB_URI } = process.env;
-const connectToDb = async () => {
-  try {
-    await mongoose.connect(MONGOLAB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-    });
-    console.log('Database connected successfuly.');
-  } catch (error) {
-    console.log('Could not connect to the database. Exiting now...', error);
-    process.exit();
-  }
-};
-connectToDb();
-
 app.get('/', (req, res) => {
   res.send('Estudy: Team-180-a');
 });
+
 // This should be the last route else any after it won't work
 app.use('*', (req, res) => {
   res.status(404).json({
@@ -50,7 +33,32 @@ app.use('*', (req, res) => {
   });
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log('Server is listening on port 3000');
+// connect to our db
+const { MONGOLAB_URI } = process.env;
+const connectToDb = async () => {
+  try {
+    mongoose.connection.on('connected', () => {
+      // if connection is made successfully emit ready event.
+      console.log('Database connected successfuly');
+      app.emit('ready');
+    });
+    await mongoose.connect(MONGOLAB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+    });
+  } catch (error) {
+    console.log('Could not connect to the database. Exiting now...', error);
+    process.exit();
+  }
+};
+connectToDb();
+
+  // if db is connected, handle ready event , start server.
+app.on('ready', () => {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log('Server is listening on port 3000');
+  });
 });
