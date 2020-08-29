@@ -12,7 +12,17 @@
     "prettier/prettier": "error",
     "no-console": "off",
     "no-underscore-dangle": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "only-multiline",
+        "exports": "only-multiline",
+        "functions": "only-multiline"
+      }
+    ]
   },
   "plugins": ["prettier"]
 }
