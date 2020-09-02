@@ -3,6 +3,10 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const mongoose = require('mongoose');
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
+const { swaggerOptions } = require('./swaggerOptions');
 const registerRoutes = require('./routes/registerRoutes');
 
 const app = express();
@@ -14,6 +18,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(cors());
+
+const specs = swaggerJsdoc(swaggerOptions(process.env.PORT || 3000));
+app.use('/docs', swaggerUi.serve);
+app.get(
+  '/docs',
+  swaggerUi.setup(specs, {
+    explorer: true,
+  })
+);
 
 app.use(registerRoutes);
 
@@ -55,7 +68,7 @@ const connectToDb = async () => {
 };
 connectToDb();
 
-  // if db is connected, handle ready event , start server.
+// if db is connected, handle ready event , start server.
 app.on('ready', () => {
   const port = process.env.PORT || 3000;
   app.listen(port, () => {
