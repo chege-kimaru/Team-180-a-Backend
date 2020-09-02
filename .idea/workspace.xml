@@ -25,12 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6249650b-8f4f-4cc4-a5c5-16a6aae0cc0f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/controllers/registerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/registerController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Teacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Teacher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/registerRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/registerRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599060223154</updated>
       <workItem from="1599060227890" duration="3742000" />
-      <workItem from="1599068882193" duration="2917000" />
+      <workItem from="1599068882193" duration="3369000" />
     </task>
     <servers />
   </component>
