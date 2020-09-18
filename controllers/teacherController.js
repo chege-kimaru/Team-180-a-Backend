@@ -8,7 +8,7 @@ exports.getTeachers = async (req, res) =>
     'Get Teachers',
     200,
     true,
-    await teacherService.getTeachers
+    await teacherService.getTeachers()
   );
 
 exports.getTeacherDetails = async (req, res) =>

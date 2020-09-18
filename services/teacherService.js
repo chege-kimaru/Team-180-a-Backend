@@ -1,5 +1,6 @@
 const teacherModel = require('../models/Teacher');
 const classModel = require('../models/Class');
+require('../models/Subject');
 const { NotFoundError } = require('../utils/errors');
 
 exports.getTeachers = () => teacherModel.find();
