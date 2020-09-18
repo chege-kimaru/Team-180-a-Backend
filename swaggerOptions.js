@@ -32,8 +32,13 @@ exports.swaggerOptions = (port) => ({
     ],
   },
   apis: [
+    './models/Teacher.js',
+    './models/School.js',
+    './models/Class.js',
+    './models/Subject.js',
     './controllers/registerController.js',
     './routes/registerRoutes.js',
-    './models/Teacher.js',
+    './controllers/teacherController.js',
+    './routes/teacherRoutes.js',
   ],
 });
